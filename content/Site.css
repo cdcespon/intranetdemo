@@ -1,0 +1,1164 @@
+﻿/*COLORES
+#d7ebf9   celeste
+#00356A   azul oscuro
+
+NUEVO WEBSITE
+AZUL OSCURO     #00447b
+AZUL INTER      #1f70c3
+AZUL HOVER      #035ca5
+CELESTE PAGINA  #f39c12
+CELESTE         #d7ebf9
+VERDE           #007b37
+NARANJA         #fd8123
+
+LILA COPADO    #95B3D7 (mas oscurito)
+LILA COPADO TMB #B8CCE4
+
+*/
+
+
+
+/*GENERALES*/
+.seguridad {
+    display: none;
+}
+
+.seguridadVisible {
+    display: block !important;
+}
+.divCentro {
+padding: 20px !important;
+}
+.noVisible {
+    display: none !important;
+}
+
+.textAlignLeft {
+    text-align: left !important;
+}
+
+.textAlignRight {
+    text-align: right !important;
+}
+
+.textAlignCenter {
+    text-align: center !important;
+}
+
+.e-tab .e-header li a {
+    padding: .4em .7em;
+}
+
+.errorValidate {
+    color: red;
+}
+
+.clear {
+    clear: both;
+}
+
+.e-radiobtn-wrap .e-radsmaller .e-rad-icon {
+    line-height: 12px;
+    text-indent: 0.6px;
+}
+
+.cols-sample-area {
+    min-height: 870px !important;
+}
+
+.textoBlanco {
+    color: white;
+}
+
+.textoEnNegrita {
+    font-weight: bold;
+}
+
+.input40 {
+    width: 40px !important;
+    text-align: center;
+}
+
+.input60 {
+    width: 60px;
+    text-align: center;
+     border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
+.input80 {
+    width: 80px !important;
+    text-align: center;
+    border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+.input80template {
+    width: 80px !important;
+    text-align: center;
+}
+
+.focoEnElemento {
+    background-color: tomato !important;
+}
+
+iframe {
+    border: 1px;
+}
+
+.alert .close {
+    color: white !important;
+    opacity: 1 !important;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover
+{
+  color: darkslateblue
+}
+a {
+    color: dimgray ;
+
+}
+
+
+/*Botones*/
+.e-btn.e-select {
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    background-color: darkorange;
+    color: white;
+    height: 32px;
+}
+
+.e-cancel.e-button {
+    background-color: white;
+    color: darkgreen;
+    border-color: darkgreen;
+}
+
+    .e-cancel.e-button:hover {
+        background-color: #86cbea;
+    }
+
+.e-pivotschemadesigner .pivotButton > .pvtBtn, .e-pivotgrid .pivotButton .e-btn.e-select {
+    color: white !important;
+}
+
+
+
+/*No modificar los estilos leftxxx ni rightxxx. Si se necesitan otros anchos, crear nuevos total es gratis*/
+#left500 {
+    width: 500px;
+    float: left;
+}
+
+#right500 {
+    margin-left: 500px;
+    padding-left: 10px;
+}
+
+
+
+/*Pop Up*/
+.tituloCampo {
+    text-align: right;
+    font-weight: bold;
+}
+
+.gridform div {
+    text-align: center;
+}
+
+.gridform .e-tab {
+    text-align: justify !important;
+}
+
+.e-grid .e-ejinputtext {
+    width: 100%;
+    min-width: 175px;
+    padding: 0px;
+    height: 26px;
+}
+
+.e-ddl .e-widget, .e-ddl, .e-numeric {
+    width: 100%;
+}
+
+
+.e-in-wrap .e-box {
+    min-width: 175px !important;
+}
+
+.e-datepicker.e-js.e-input {
+    height: 26px !important;
+}
+
+.e-dialog > .e-header .e-title {
+    font-weight: bold;
+}
+
+div[id$="dialogEdit_wrapper"].e-dialog.e-dialog-wrap {
+    /*top: 15% !important;
+    left: 15% !important;*/
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    width: 70% !important;
+}
+
+div[id$="ConfirmDialog_wrapper"].e-dialog.e-dialog-wrap {
+    width: 350px !important;
+}
+
+.gridform table {
+    width: 100%;
+}
+
+.e-dialog > .e-header {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+
+.e-dialog > .e-dialog-scroller {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+}
+
+.e-dialog .e-ejinputtext {
+    height: 26px;
+}
+
+input[id$="ConfirmDialogCancel"].e-button {
+    background-color: white;
+    color: #1f70c3;
+    border-color: #1f70c3;
+}
+
+    input[id$="ConfirmDialogCancel"].e-button:hover {
+        background-color: #86cbea;
+    }
+
+.e-dialog-content {
+    width: 100% !important;
+}
+
+
+/*Modal Default*/
+#modalError,
+#modalExitoso,
+#modalAdvertencia,
+#modalInformacion {
+    padding-top: 15%;
+}
+
+.modal .alert {
+    margin-bottom: 0px;
+}
+
+.alert a {
+    text-decoration: none !important;
+}
+
+.modal-body {
+    padding: 1px;
+}
+
+.alert p {
+    text-align: center;
+}
+
+
+
+/*Waiting Message*/
+/*#loading {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 99;
+    text-align: center;
+}*/
+
+#loading-image {
+    position: relative;
+    top: 30%;
+    left: 0;
+    z-index: 100;
+}
+
+.e-waitpopup-pane .e-image {
+    position: fixed;
+    top: 40% !important;
+    left: 50%;
+}
+
+.waitingPopUp {
+    position: fixed !important;
+    height: 100% !important;
+}
+
+#target {
+    height: 100%;
+    width: 100%;
+}
+
+#target_WaitingPopup .e-image {
+    display: block;
+    height: 70px;
+}
+
+
+
+/*Gantt*/
+.e-content-item .e-toolbaricons {
+    font-weight: bold;
+}
+
+.textAlignRight .row {
+    display: inline-block;
+}
+
+.e-gantttoolbar .e-ddl {
+    height: 24px !important;
+}
+
+.e-taskbarname {
+    overflow: initial !important;
+}
+
+.e-gantttoolbar .e-btn.e-select {
+    height: 24px;
+}
+
+.e-dialog .e-tab .e-header.e-addborderbottom {
+    background-color: transparent;
+}
+
+
+
+/*Validaciones*/
+.e-grid div.e-error .e-toparrow {
+    border-bottom-color: red !important;
+}
+
+.e-grid div.e-field-validation-error {
+    background-color: red;
+    color: white;
+}
+
+.e-grid .e-error div.e-field-validation-error {
+    padding: 4px;
+    font-size: 12px;
+}
+
+
+
+/*Grilla*/
+/*.e-tipContainer {
+    display: none !important;
+}*/
+
+.e-icon.e-down-arrow {
+    color: white !important;
+}
+
+/*.conDetalle table > colgroup > col:first-child {
+    width: 15px !important;
+}*/
+
+td.e-groupcaption {
+    font-weight: bold !important;
+}
+
+.e-grid .e-rowcell {
+    padding: 0.5em;
+}
+
+.e-grid .e-gridheader {
+    height: 32px;
+}
+
+.e-grid .e-toolbar.e-toolbarspan {
+    height: 32px;
+}
+
+.e-pager {
+    padding-bottom: 2px;
+    padding-top: 6px;
+}
+
+.e-grid .e-unboundcelldiv button {
+    height: 19px !important;
+}
+
+.e-grid .emptyrecord {
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.e-grid td.e-active {
+    background: #FF9C2F; /*linear-gradient(to bottom,#3277b2,#296293);*/
+    color: white;
+}
+
+.e-grid tr.e-hover {
+    background-color: #d7ebf9;
+    color: black;
+}
+
+.e-grid .e-detailindentcell {
+    border-right-color: #95B3D7;
+}
+
+.e-detailrow, .e-detailrowexpand {
+    background-color: #95B3D7;
+}
+
+.e-table tbody tr {
+    line-height: 20px;
+}
+
+.e-grid .e-rowcell {
+    padding: 1px 3px;
+    line-height: 20px;
+}
+
+.e-grid .e-detailcell {
+    padding-top: 5px;
+    padding-bottom: 4px;
+    padding-right: 4px;
+}
+
+.e-grid .e-icon.e-gnextforward {
+    margin-top: 3px;
+    padding-top: 3px;
+}
+
+.e-grid td.e-active .e-icon.e-gnextforward {
+    color: white;
+}
+
+
+.e-gridtoolbar.e-toolbar.e-js.e-widget.e-box.e-toolbarspan ul:last-child, .e-gantttoolbar.e-toolbar.e-js.e-widget.e-box.e-toolbarspan.e-tooltip ul:last-child {
+    float: right;
+}
+
+.whiteRowStatus {
+    background-color: white !important;
+}
+
+.redRowStatus {
+    background-color: red !important;
+}
+
+.yellowRowStatus {
+    background-color: yellow !important;
+}
+.grayRowStatus {
+    background-color: lightgray !important;
+}
+
+.greenRowStatus {
+    background-color: limegreen !important;
+}
+
+.filaNaranjaClarito {
+    background-color: #fbc97f !important;
+}
+
+.filaRojoClarito {
+    background-color: tomato !important;
+}
+.filaRosaClarito {
+    background-color: #FFB6C1 !important;
+}
+
+
+.filaEnTrabajo {
+    background-color: #95B3D7 !important;
+    color: black;
+}
+
+    .filaEnTrabajo.e-hover {
+        color: white !important;
+    }
+
+.e-grid .e-detailrowexpand .e-icon.e-gdiagonalnext {
+    color: white;
+}
+
+.e-tab .e-header.e-addborderbottom {
+    background-color: #95B3D7;
+}
+
+
+.e-grid .e-gridheader {
+    height: auto !important;
+}
+
+
+#GrillaControles_dialogEdit_wrapper{
+    width:40% !important;
+}
+
+/* TAB */
+.e-tab .e-left li a, .e-tab .e-right li a {
+    padding: 10px 2px;
+}
+
+
+
+/* TABLA */
+.table {
+    margin-bottom: 0px;
+}
+
+    .table tbody tr td {
+        padding: 4px;
+    }
+    .tablaCompactaAmplia tbody tr td {
+    padding-left: 15px;
+    padding-bottom: 10px;
+    vertical-align:initial;
+}
+
+.tablaCompacta tbody tr td {
+    padding-left: 8px;
+    padding-bottom: 5px;
+}
+
+/* PROGRESS BAR*/
+.e-progressbar {
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+    .e-progressbar .e-progress {
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+    }
+
+#textArea {
+    width: 1000px;
+    height: 400px;
+}
+
+
+
+/* DEFAULT.css*/
+#htmlDefault {
+    height: 100vh;
+}
+
+#bodyDefault {
+    height: 100vh;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > .user-footer {
+    background-color: #222d32;
+}
+
+/* CUSTOMIZACION NUEVA*/
+
+.skin-blue main-header {
+    position: relative;
+    max-height: 100px;
+    z-index: 1030;
+}
+
+/* MENU*/
+
+/* Background del menu hover y desplegado*/
+.skin-blue .sidebar-menu > li:hover > a, .skin-blue .sidebar-menu > li.active > a {
+    color: lightgray;
+    background: #181f23;
+    border-left-color: #f39c12;
+}
+
+/* Background del menu desplegado*/
+.skin-blue .sidebar-menu > li > .treeview-menu {
+    margin: 0 0px;
+    background-color: #374850;
+    padding-left: 10px;
+}
+
+/* Backgrounf del Menu*/
+.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
+    background-color: #222d32;
+}
+
+.skin-blue .sidebar-menu > li.header {
+    color: white;
+    background: #181f23;
+}
+
+/* Header de la página -Content*/
+.skin-blue .main-header .navbar {
+    background-color: #f39c12;
+}
+/* Header de la página - Logo*/
+.skin-blue .main-header .logo {
+    background-color: #e08e0b;
+}
+
+/* Header de la página - Logo Hover*/
+    .skin-blue .main-header .logo:hover {
+        background-color: #cf8613;
+    }
+
+
+/* Buscador*/
+.skin-blue .sidebar-form input[type="text"], .skin-blue .sidebar-form .btn {
+    background-color: #374850;
+    color: dimgray;
+}
+
+/* Background del Contenedor principal*/
+.content-wrapper,
+.right-side {
+  min-height: 100%;
+  background-color: white;
+  z-index: 800;
+}
+
+/* Background del Contenedor footer*/
+
+.main-header {
+    position: relative;
+    max-height: 100px;
+    z-index: 1030;
+    width: 100%;
+}
+
+.main-footer {
+    background: #f39c12;
+    padding: 15px;
+    color: #444;
+    border-top: 1px solid #d2d6de;
+    bottom:0;
+    position:fixed;
+    width:100%;
+}
+
+/* Background del popup de perfil usuario*/
+.skin-blue .main-header li.user-header {
+    background-color: #f39c12;
+}
+
+/* Background del ícono de menu */
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+    background-color: #cf8613;
+    color: darkgreen;
+}
+
+.control-sidebar-bg {
+    background: #333;
+}
+/* Background de la bbarra lateral */
+.control-sidebar-dark, .control-sidebar-dark + .control-sidebar-bg {
+    background: #333;
+}
+
+/* FIN CUSTOMIZACION NUEVA*/
+
+
+/* ICONOS */
+.reporte:before {
+    content: "\e743";
+}
+
+.refresh:before {
+    content: "\e677";
+}
+
+.verTareas:before {
+    content: "\e75d";
+}
+
+.mails:before {
+    content: "\e621";
+}
+
+.importar:before {
+    content: "\e7b1";
+}
+
+/*.fa.fa-lockrojo {
+    color: red;
+}*/
+
+.Base:before {
+    content: "\f1c0";
+}
+
+.fa.fa-unlock {
+    content: "\e677";
+}
+
+.incidencias:before {
+    content: "\e654";
+}
+
+.etiqueta:before {
+    /*Hay que incluir la fuente en el aspx*/
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f029";
+}
+
+.seleccionarTodos:before {
+    content: "\e6db";
+}
+
+.flechaLink:before {
+    content: "\e84f";
+}
+
+.archivos:before {
+    content: "\e78f";
+}
+
+.Colapsar:before {
+    content: "\e625";
+}
+
+.buscar:before {
+    content: "\e66e";
+}
+
+.buscarAgregar:before {
+    content: "\e725";
+}
+
+.play:before {
+    content: "\e658";
+}
+
+.pausa:before {
+    content: "\e659";
+}
+
+.check:before {
+    content: "\e657";
+}
+
+
+.download:before {
+    content: "\f019";
+}
+
+.Add:before {
+    content: "\f067";
+}
+
+.cotizacionAlternativa:before {
+    content: "\e74c";
+}
+
+.cotizacionBase:before {
+    content: "\e74f";
+}
+
+.composicion:before {
+    content: "\e661";
+}
+
+.opcional:before {
+    content: "\e7e7";
+}
+
+.opcionalDeEntrega:before {
+    content: "\e807";
+}
+
+.canje:before {
+    content: "\e752";
+}
+
+.ayuda:before {
+    content: "\e777";
+}
+
+.reservar:before {
+    content: "\e670";
+}
+
+.reprocesar:before {
+    content: "\e736";
+}
+
+.GenerarCot:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f14d";
+}
+
+.PlanillaTransporte:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f0d1";
+}
+
+.ActualizacionMasiva:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f0ec";
+}
+
+.MostrarVisualizados:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f06e";
+}
+
+.ArticulosBejerman:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f03a";
+}
+
+.Correo:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f0e0";
+}
+
+.AutoCompletar:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f058";
+}
+
+.CancelarDevolucion:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f057";
+}
+
+.NoAutorizar:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f056";
+}
+
+.GraficoTorta:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f200";
+}
+/*TODO reemplazar por descargaConFlecha*/
+.ActualizarArticulos:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f019";
+}
+
+.descargaConFlecha:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f019"; /*fa-download  Flecha apuntando a disco rígido*/
+}
+
+.ChkFondoGris:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f14a";
+}
+
+.ojo:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f06e";
+}
+
+.key:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f084";
+}
+
+.ActualizarArticulos:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f019";
+}
+
+.SincroWeb:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f093";
+}
+
+.Lupa:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f002";
+}
+
+.GuiasDespacho:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f0c5"; /*fa-files-o  Dos hojas*/
+}
+
+.Usuario:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f007"; /*fa-user*/
+}
+
+.iconosStock {
+    display: block;
+    height: 14px;
+    width: 14px;
+    cursor: default;
+    font: normal normal normal 14px/1 FontAwesome !important;
+    color: gray;
+}
+
+    .iconosStock:hover, .iconosStock:active, .iconosStock:focus {
+        text-decoration: none !important;
+    }
+
+    .iconosStock.articuloTrazado.true:before {
+        content: "\f00c"; /*fa-check  Check-Tilde*/
+    }
+
+    .iconosStock.articuloTrazable.true:before {
+        content: "\f071"; /*fa-exclamation-triangle   Signo de admiración dentro de un triángulo*/
+    }
+
+    .iconosStock.fueraCatalogo.true:before {
+        content: "\f05c"; /*fa-times-circle-o  Cruz adentro de un círculo*/
+    }
+
+    .iconosStock.productoDrogueria.true:before {
+        content: "\f0c3";
+    }
+
+.iconosCuadrante {
+    display: block;
+    height: 14px;
+    width: 14px;
+    cursor: default;
+    font: normal normal normal 14px/1 FontAwesome !important;
+    /*color: gray;*/
+}
+
+    .iconosCuadrante:hover, .iconosCuadrante:active, .iconosCuadrante:focus {
+        text-decoration: none !important;
+    }
+
+    .iconosCuadrante.Q0:before {
+        content: "\f005"; /*fa-star  Estrella*/
+        color: #ccc;
+    }
+
+    .iconosCuadrante.Q1:before {
+        content: "\f005"; /*fa-star  Estrella*/
+        color: #821000;
+    }
+
+    .iconosCuadrante.Q2:before {
+        content: "\f005"; /*fa-star  Estrella*/
+        color: #cb4e2d;
+    }
+
+    .iconosCuadrante.Q3:before {
+        content: "\f005"; /*fa-star  Estrella*/
+        color: #ffd35c;
+    }
+
+    .iconosCuadrante.Q4:before {
+        content: "\f005"; /*fa-star  Estrella*/
+        color: #d6c393;
+    }
+
+.iconosGCBA {
+    /*display: block;*/
+    height: 14px;
+    width: 14px;
+    cursor: default;
+    font: normal normal normal 14px/1 FontAwesome !important;
+}
+
+    .iconosGCBA:hover, .iconosGCBA:active, .iconosGCBA:focus {
+        text-decoration: none !important;
+    }
+
+    .iconosGCBA.admiracionDentroDeTriangulo.true:before {
+        content: "\f071"; /*fa-exclamation-triangle   Signo de admiración dentro de un triángulo*/
+        color: tomato;
+    }
+
+    .iconosGCBA.cruz.true:before {
+        content: "\f05c"; /*fa-times Cruz */
+        color: tomato;
+    }
+
+
+
+.iconosVentas {
+    display: block;
+    height: 20px;
+    /*width: 20px;*/
+    cursor: default;
+    font: normal normal normal 14px/1 FontAwesome !important;
+    /*margin-left: 30px;*/
+    text-align: center !important;
+    text-decoration: none !important;
+}
+
+    .iconosVentas:hover, .Cumpleanos:active, .Cumpleanos:focus {
+        text-decoration: none !important;
+    }
+
+    .iconosVentas.CotGenerado.true:before {
+        content: "\f00c"; /*fa-lock*/
+        color: green;
+    }
+
+    .iconosVentas.CotGenerado.false:before {
+        content: "\f00d"; /*fa-unlock*/
+        color: red;
+    }
+
+.Habilitado {
+    display: block;
+    height: 14px;
+    width: 14px;
+    cursor: default;
+    margin-left: 60px;
+    font: normal normal normal 14px/1 FontAwesome !important;
+}
+
+    .Habilitado.CodHabilitado.true:before {
+        content: "\f00c"; /*fa-lock*/
+        color: green;
+    }
+
+    .Habilitado.CodHabilitado.false:before {
+        content: "\f00d"; /*fa-unlock*/
+        color: red;
+    }
+
+
+.Ausente {
+    height: 14px;
+    width: 14px;
+    cursor: default;
+    font: normal normal normal 14px/1 FontAwesome !important;
+}
+
+    .Ausente:hover, .Ausente:active, .Ausente:focus {
+        text-decoration: none !important;
+    }
+
+    .Ausente.true:before {
+        content: "\f007"; /*fa-user*/
+        color: red;
+    }
+
+.Cumpleanos {
+    height: 14px;
+    width: 14px;
+    cursor: default;
+    font: normal normal normal 14px/1 FontAwesome !important;
+}
+
+    .Cumpleanos:hover, .Cumpleanos:active, .Cumpleanos:focus {
+        text-decoration: none !important;
+    }
+
+    .Cumpleanos.true:before {
+        content: "\f1fd"; /*fa-birthday-cake Torta cumpleanos*/
+        color: dodgerblue;
+    }
+
+
+.iconosEstadoRecepcion {
+    display: block;
+    height: 14px;
+    width: 14px;
+    cursor: default;
+    font: normal normal normal 14px/1 FontAwesome !important;
+    color: gray;
+}
+
+    .iconosEstadoRecepcion:hover, .iconosEstadoRecepcion:active, .iconosEstadoRecepcion:focus {
+        text-decoration: none !important;
+    }
+
+    .iconosEstadoRecepcion.Estado.true:before {
+        content: "\f023"; /*fa-lock*/
+        color: indianred;
+    }
+
+    .iconosEstadoRecepcion.Estado.false:before {
+        content: "\f09c"; /*fa-unlock*/
+        color: darkseagreen;
+    }
+
+
+.IrPagina:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f045"; /*fa-share-square-o  Flecha que sale de un rectangulo */
+    color: black;
+}
+
+.cancelar:before {
+    content: "\e656";
+}
+
+.copiar:before {
+    content: "\e646";
+}
+
+.escoba:before {
+    content: "\e60b";
+}
+
+.reloj:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f017"; /*fa-clock-o*/
+}
+
+.calendario:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f073"; /*fa-calendar*/
+}
+
+.cumplimiento:before {
+    content: "\e63e";
+}
+
+.agregarConBarraInferior:before {
+    content: "\e609";
+}
+
+.impresora:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f02f"; /*fa-print*/
+}
+
+.carritoComprasFlechaAdentro:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f218"; /*fa-cart-arrow-down  Carrito de compras con flecha para adentro*/
+}
+
+.candadoAbierto:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f09c"; /*fa-unlock */
+}
+
+.candadoCerrado:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f023"; /*fa-lock */
+}
+
+.libras:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f154"; /*fa-gbp */
+}
+
+.flechasEnCirculo:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f079"; /*fa-retweet  Flechas que se conectan entre sí haciendo un círculo*/
+}
+
+.martilloJuez:before {
+    font: normal normal normal 14px/1 FontAwesome !important;
+    content: "\f0e3"; /*fa-gavel */
+}

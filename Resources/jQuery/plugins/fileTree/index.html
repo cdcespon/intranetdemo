@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>jQueryFileTree Demo</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!--<link rel="stylesheet" href="css/skeleton.css">-->
+    <link href="jQueryFileTree.min.css" rel="stylesheet" />
+    <!--<link rel="stylesheet" href="css/jqft-test.css">-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/atelier-cave.light.min.css">
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- <link rel="icon" type="image/png" href="images/favicon.png" /> -->
+</head>
+<body>
+    <!-- Primary Page Layout
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container">
+
+        <!-- TRIGGERS -->
+        <div class="row" id="events">
+            <div class="four columns offset-by-one filetree-block">
+                <div class="filetree-events"></div>
+            </div>
+            <!--<div class="six columns info-block">
+                <div>
+                    <h4>Events</h4>
+                </div>
+                <div>
+
+                    <div class="blurb">jQueryFileTree triggers events for most unique actions: expand, expanded, collapse, collapsed, clicked</div>
+                    <div class="blurb events-log"></div>
+                </div>
+            </div>-->
+        </div>
+
+    </div>
+    <!-- JS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="jQueryFileTree.min.js"></script>
+    <script type="text/javascript">
+		hljs.initHighlightingOnLoad();
+		$(document).ready(function() {
+			// if title font is not Raleway, then we know Skeleton isn't compiled, error out
+			//if( $('h1').css('font-family').indexOf("Raleway") === -1) {
+			//	$('body').html('<h1>Please install test page assets with Bower (see README)</h1>');
+			//}
+
+			$('.filetree-events')
+				.fileTree({
+				   script: 'connectors/jqueryFileTree.aspx'
+				})
+				.on('filetreeinitiated filetreeexpand filetreeexpanded filetreecollapse filetreecollapsed filetreeclicked', function (e, data) {
+
+				    if (e.type == 'filetreeclicked')
+				        parent.$(parent.document).trigger('editfile',data.rel);
+				
+
+					if( $('.events-log div').length >= 5 )
+						$('.events-log div:nth(0)').slideUp('slow', function(){
+							$(this).remove();
+							$('.events-log').append( '<div>'+data.value+' '+e.type.replace('filetree','')+'</div>');
+						});
+					else {
+						if( e.type == 'filetreeinitiated' )
+							$('.events-log').append( '<div>filetree-events initiated</div>');
+						else
+							$('.events-log').append( '<div>'+data.value+' '+e.type.replace('filetree','')+'</div>');
+					}
+				});
+
+			// when the screen is small, move the filetree elements to the bottom of their containers for better readability
+			$(window).on('load resize', function(event){
+				// screen is smaller than 550px, move info-block up so the heading is on top of filetree-block
+				// -> ONLY IF THE filetree-block IS ALREADY ON TOP
+				if( $(this).width() <= '550' && $('.filetree-block:first').index() === 0 )
+					moveUp();
+				// screen is larger than 550, move info back down the node tree, if
+				// -> ONLY IF filetree-block IS NOT ON TOP
+				else if( $(this).width() > '550' && $('.filetree-block:first').index() != 0 )
+					moveDown(); // move info block back down if screen resolution has enlarged
+			});
+
+			function moveUp() {
+				console.log('move up');
+
+				$('.info-block').map(function(){
+					$(this).after( $(this).parent().find('.filetree-block') );
+				});
+			}
+
+			function moveDown() {
+				console.log('move down');
+
+				$('.info-block').map(function(){
+					$(this).before( $(this).parent().find('.filetree-block') );
+				});
+			}
+
+			$('a.top').click(function() {
+				$('html, body').animate({ scrollTop: 0 }, 700, 'easeOutExpo');
+				return false;
+			});
+		});
+    </script>
+    <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

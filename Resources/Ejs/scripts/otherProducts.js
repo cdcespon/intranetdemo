@@ -1,0 +1,2 @@
+window.essentialJsUrl = "file:///C:/Users/ccespon/AppData/Local/Syncfusion/EssentialStudio/14.2.0.26/JavaScript/samples/web/default.htm";
+window.mobileJsUrl = "file:///C:/Users/ccespon/AppData/Local/Syncfusion/EssentialStudio/14.2.0.26/JavaScript/samples/mobile/desktop/default.htm";
