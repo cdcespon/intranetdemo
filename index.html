@@ -1,153 +1,500 @@
+<%@ Page Language="C#" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-	<title>Demo for lines in Chart widget | Essential JS 1 (jQuery) | Syncfusion</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
-    <meta name="description" content="This demo page illustrates the lines in Chart widget of Syncfusion Essential Studio for jQuery (or Essential JS 1)." />
-	<link href="content/bootstrap.min.css" rel="stylesheet">
-    <link href="content/ej.web.all.min.css" rel="stylesheet" />
-    <link href="content/default.css" rel="stylesheet" />
-	<link href="content/default-responsive.css" rel="stylesheet" />
+<html id="htmlDefault">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ALMENARA | Intranet</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link rel="stylesheet" href="Resources/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="Resources/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="Resources/AdminLTE/css/AdminLTE.min.css" />
+    <link rel="stylesheet" href="Resources/AdminLTE/css/skins/skin-blue.min.css" />
+    <link rel="stylesheet" href="Resources/Nprogress/nprogress.css" />
+    <link href="Resources/Nprogress/nprogress.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-         <script src="scripts/jquery-1.11.3.min.js" type="text/javascript"></script>
-     <!--<![endif]-->
-    <!--[if gte IE 9]><!-->
-    <script src="scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
-    <!--<![endif]-->
-    <script src="scripts/ej.web.all.min.js" type="text/javascript"></script>
-	<script src="scripts/properties.js" type="text/javascript"></script>
-  </head>
- <body>  
-    <div class="content-container-fluid">      
-        <div class="row">                
-            <div class="cols-sample-area">                                  				
-				<div id="container"></div> 					                   
-            </div>				
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <link rel="stylesheet" href="Content/Site.css">
+</head>
+
+<body class="skin-blue sidebar-mini" oncontextmenu="return false;" id="bodyDefault" onunload=" LogOff();">
+    <div class="wrapper">
+        <header class="main-header">
+
+            <a href="#" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>AI</b></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>ALMENARA Intranet</b></span>
+            </a>
+
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <li class="dropdown messages-menu">
+                            <!-- Menu toggle button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="label label-success">0</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">No tiene mensajes</li>
+                                <li>
+                                    <!-- inner menu: contains the messages -->
+                                    <ul class="menu" id="messagemenu">
+                                        <li>
+                                            <!-- start message -->
+                                            <a href="#">
+                                                <!-- Message title and timestamp -->
+                                                <h4></h4>
+                                                <!-- The message -->
+                                            </a>
+                                        </li>
+                                        <!-- end message -->
+                                    </ul>
+                                    <!-- /.menu -->
+                                </li>
+                                <li class="footer"><a href="#">Ver todos los mensajes</a></li>
+                            </ul>
+                        </li>
+                        <!-- /.messages-menu -->
+
+                        <!-- Notifications Menu -->
+                        <li class="dropdown notifications-menu">
+
+                            <!-- Menu toggle button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="label label-warning">0</span>
+
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">No tiene Notificaciones</li>
+                                <li>
+                                    <!-- Inner Menu: contains the notifications -->
+                                    <ul class="menu" id="menumensajes">
+                                        <li>
+                                            <!-- start notification -->
+                                            <a href="#"></a>
+                                        </li>
+                                        <!-- end notification -->
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">Ver todas las notificaciones</a></li>
+                            </ul>
+                        </li>
+                        <!-- Tasks Menu -->
+                        <li class="dropdown tasks-menu">
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-clock-o"></i>
+                                <span id="lblTimeout" class="label label-danger">0</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <ul class="menu">
+                                    </ul>
+                                </li>
+                                <li class="footer">
+                                    <a href="#">Ver todas la tareas</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- User Account Menu -->
+                        <li class="dropdown user user-menu">
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <!-- The user image in the navbar-->
+                                <img src="/Resources/AdminLTE/img/user2-160x160.jpg" id="avatarimagesmall" class="user-image" alt="User Image">
+                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                <span class="hidden-xs" id="lbluser">Anónimo</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- The user image in the menu -->
+                                <li class="user-header">
+
+                                    <img src="/Resources/AdminLTE/img/user2-160x160.jpg" id="avatarimageuser" class="img-circle" alt="User Image">
+                                    <p>
+                                        <span class="hidden-xs" id="lblloggueduser"></span>
+                                        <small></small>
+                                    </p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div id="loginButton" class="pull-left">
+                                        <a href="#" onclick="raiseLogin();" class="btn btn-primary btn-flat">Ingresar</a>
+                                    </div>
+
+                                    <div class="pull-right" id="resetPasswordButton">
+                                        <a href="#" onclick="raisePasswordReset();" class="btn btn-warning btn-flat">Reseteo de Clave</a>
+                                    </div>
+
+
+                                    <div class="pull-left" id="passwordChangeButton" style="display: none;">
+                                        <a href="#" onclick="raisePasswordChange();" class="btn btn-warning btn-flat">Cambiar Clave</a>
+                                    </div>
+                                    <div class="pull-right" id="logOffButton" style="display: none;">
+                                        <a href="#" onclick="LogOff();" class="btn btn-danger btn-flat">Salir</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Right Menu -->
+                        <li>
+                            <a href="#" data-toggle="control-sidebar" style="display: block;"><i class="fa fa-gears"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img id="avatarimage" src="/Resources/AdminLTE/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p><span class="hidden-xs" id="lblusermain">Anónimo</span></p>
+                        <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
+                    </div>
+                </div>
+
+                <!-- search form (Optional) -->
+                <form action="#" method="get" class="sidebar-form" id="buscadorHome">
+                    <div class="input-group">
+                        <input type="text" name="txtFiltroMenu" id="txtFiltroMenu" class="form-control" placeholder="Buscar...">
+                        <span class="input-group-btn">
+                            <button type="submit" name="search" id="search-btn" onclick="filterMenu();" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </form>
+                <!-- /.search form -->
+
+                <!-- Sidebar Menu -->
+                <ul class="sidebar-menu" id="sidemenuAccesosFijos">
+                    <li class="header">Menu del Sistema</li>
+                    <li class="treeview">
+                </ul>
+                <ul class="sidebar-menu" id="sidemenu">
+                    <li id="menuerrorLabel" class="alert-danger" style="display: none;">
+                        <a href="#" style="text-align: center">Error de carga.</a>
+                    </li>
+                </ul>
+                <ul class="sidebar-menu" id="waitsidemenu">
+                    <li id="loading">
+                        <a href="#" style="text-align: center">
+                            <img src="Resources/imagenes/gif/loading.gif" height="28" width="28" style="align-content: center" />
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <!-- Main content -->
+            <section class="content" style="overflow: scroll">
+                <div id="tabs" style="min-height: 100vh;">
+                </div>
+
+            </section>
+            <!-- /.content -->
         </div>
-    </div>  
-    <div id="Tooltip" style="display: none;">
-		<div id="icon">	
-            <div id="eficon">
-			</div>
-	    </div>
-        <div id="value">
-            <div>
-               <label id="efpercentage">&nbsp;#point.y#
-			   </label>
-               <label id="ef">Efficiency
-			   </label>
+        <!-- /.content-wrapper -->
+
+        <!-- Main Footer -->
+        <footer class="main-footer bottom">
+            <!-- To the right -->
+            <div class="pull-right hidden-xs">
+            </div>
+            <!-- Default to the left -->
+            <strong style="color: white;">Copyright © 2019 <a href="#">Almenara</a> Intranet. Todos los derechos reservados.</strong>
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Create the tabs -->
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+                <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- Home tab content -->
+                <div class="tab-pane active" id="control-sidebar-home-tab">
+                    <aside style="background-color: #FFF; height: 600px">
+                        <iframe src="Resources/jQuery/plugins/fileTree/index.html" style="height: inherit"></iframe>
+                    </aside>
+                </div>
+                <!-- /.tab-pane -->
+                <!-- Stats tab content -->
+                <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+                <!-- /.tab-pane -->
+                <!-- Settings tab content -->
+                <div class="tab-pane" id="control-sidebar-settings-tab">
+                    <form method="post">
+                        <h3 class="control-sidebar-heading">General Settings</h3>
+
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Report panel usage
+              <input type="checkbox" class="pull-right" checked>
+                            </label>
+
+                            <p>
+                                Some information about this general settings option
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+                    </form>
+                </div>
+                <!-- /.tab-pane -->
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+           immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
+
+    <div id="modalAdvertencia" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="alert alert-warning fade in">
+                        <a href="#" class="close" data-dismiss="modal" aria-label="close" title="Cerrar">×</a>
+                        <p class="mensajeAdvertencia">Advertencia</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Aceptar</button>
+                </div>
             </div>
         </div>
     </div>
-	 
-  <script type="text/javascript" language="javascript">
-    $(function ()
-	{
-        $("#container").ejChart(
-        {
-		    //Initializing Primary X Axis	
-		    primaryXAxis:
-            {
-			    range: { min: 2005, max: 2011, interval: 1 },
-                title: { text: 'Year' },
-				valueType:'category'
-            },	
-			
-			//Initializing Primary Y Axis	
-            primaryYAxis:
-            {
-                labelFormat: "{value}%",
-                title: { text: 'Efficiency' },
-                range: { min: 25, max: 50, interval: 5 }
-            },	
-			
-			//Initializing Common Properties for all the series
-            commonSeriesOptions: 
-			{
-                type: 'line', enableAnimation: true,
-				tooltip:{ visible :true, template:'Tooltip'},
-                marker:
-                {
-                    shape: 'circle',
-                    size:
-                    {
-                        height: 10, width: 10
-                    },
-                    visible: true
-                },
-                 border : {width: 2}                             
-            },	
-			
-            //Initializing Series				
-            series: 
-			[
-			    {
-                points: [{ x: 2005, y: 28 }, { x: 2006, y: 25 },{ x: 2007, y: 26 }, { x: 2008, y: 27 }, 
-						 { x: 2009, y: 32 }, { x: 2010, y: 35 }, { x: 2011, y: 30 }],						 
-                name: 'India'
-                },						
-                {
-                points: [{ x: 2005, y: 31 }, { x: 2006, y: 28 },{ x: 2007, y: 30 }, { x: 2008, y: 36 }, 
-						 { x: 2009, y: 36 }, { x: 2010, y: 39 }, { x: 2011, y: 37 }],						 
-                name: 'Germany'
-                },
-				{
-                points: [{ x: 2005, y: 36 }, { x: 2006, y: 32 },{ x: 2007, y: 34 }, { x: 2008, y: 41 }, 
-						 { x: 2009, y: 42 }, { x: 2010, y: 42 }, { x: 2011, y: 43 }],						 
-                name: 'England'
-                },					
-                {
-                points: [{ x: 2005, y: 39 }, { x: 2006, y: 36 },{ x: 2007, y: 40 }, { x: 2008, y: 44 }, 
-						 { x: 2009, y: 45 }, { x: 2010, y: 48 }, { x: 2011, y: 46 }],						 
-                name: 'France'
-				}
-			],
-            isResponsive: true,
-			load:"loadTheme",
-            title :{text: 'Efficiency of oil-fired power production'},
-            size: { height: "600" },
-            legend: { visible: true}
-        });
-    });	 
-  </script>
-  <style class="cssStyles">
-        label{
-		margin-bottom : -25px !important ;
-		text-align :center !important;
-		}
-        .tooltipDivcontainer {
-            background-color:#E94649;        
-            color: white;
-			width:130px;
-        }
-        #Tooltip >div:first-child {
-            float: left;
-        }
-        #Tooltip #value {
-            float: right;
-            height: 50px;
-            width: 68px;
-        }
-        #Tooltip #value >div {
-            margin: 5px 5px 5px 5px;            
-        }
-        #Tooltip #efpercentage {
-            font-size: 20px;
-            font-family: segoe ui;
-			padding-left: 2px;
-        }
-         #Tooltip #ef {
-            font-size: 12px;
-            font-family: segoe ui;
-        }
-        #eficon {
-            background-image: url("./content/images/chart/eficon.png");
-            height: 60px;           
-            width: 60px;
-            background-repeat: no-repeat;
-        }		 
-  </style>	
- </body>
-</html>
 
+    <div id="modalError" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header alert alert-danger">
+                    <a href="#" class="close" data-dismiss="modal" aria-label="close" title="Cerrar">×</a>
+                    Error:
+                </div>
+                <div class="modal-body">
+                    <div class="alert fade in">
+                        <p class="errorMessage">Error</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalExitoso" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="alert alert-success fade in">
+                        <a href="#" class="close" data-dismiss="modal" aria-label="close" title="Cerrar">×</a>
+                        <p class="mensajeExitoso">Éxito</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modalInformacion" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="alert alert-info fade in">
+                        <a href="#" class="close" data-dismiss="modal" aria-label="close" title="Cerrar">×</a>
+                        <p class="mensajeInformacion">Información</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalLogin" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" style="max-width: 400px; position: fixed; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+            <div class="modal-content">
+
+                <div class="alert  fade in">
+                    <a href="#" class="close" data-dismiss="modal" aria-label="close" title="Cerrar">×</a>
+
+                    <div class="login-box-body">
+                        <div>
+                            <p class="login-box-msg">Ingrese sus credenciales</p>
+                        </div>
+                        <div id="errorLabel" class="alert alert-danger alert-dismissable" style="display: none">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <h4><i class="icon fa fa-ban"></i>Atención!</h4>
+                            El usuario y/o el password son incorrectos.
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="text" id="username" class="form-control" placeholder="usuario" />
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="password" id="password" class="form-control" placeholder="Password" />
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-8">
+                            </div>
+                            <div class="loading">
+                                <img id="imgloading" src="Resources/imagenes/gif/loading.gif" height="18" width="18" style="align-content: center" />
+                            </div>
+                            <div class="col-xs-4">
+
+                                <input type="button" id="submitButton" title="Ingresar" onclick="authenticate()" class="btn btn-success btn-block btn-flat" value="Ingresar" />
+                            </div>
+                        </div>
+                        <a href="#" onclick="olvideMiClave();">Olvidé mi clave</a><br />
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- LOGIN CHANGE -->
+    <div id="modalLoginChangePassword" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" style="max-width: 400px; position: fixed; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+            <div class="modal-content">
+
+                <div class="alert  fade in">
+                    <a href="#" class="close" data-dismiss="modal" aria-label="close" title="Cerrar">×</a>
+                    <div class="login-box-body">
+                        <div>
+                            <p class="login-box-msg">Ingrese su clave actual y su nueva clave</p>
+                        </div>
+                        <div id="errorLabelLoginChange" class="alert alert-danger alert-dismissable" style="display: none">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <h4><i class="icon fa fa-ban"></i>Atención!</h4>
+
+                        </div>
+
+
+                        <div class="form-group has-feedback">
+                            <input type="text" id="usernameLoginChange" class="form-control" placeholder="usuario" disabled="disabled" />
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="password" id="oldPassword" class="form-control" placeholder="Password Actual" />
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <input type="password" id="newPassword" class="form-control" placeholder="Nuevo Password" />
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <input type="password" id="newPasswordConfirm" class="form-control" placeholder="Reingrese Nuevo Password" />
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-8">
+                            </div>
+                            <div class="col-xs-4">
+                                <input type="button" id="submitButtonLoginChange" title="Cambiar" onclick="changePassword()" class="btn btn-success btn-block btn-flat" value="Cambiar" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- LOGIN RESET -->
+    <div id="modalLoginPasswordReset" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" style="max-width: 400px; position: fixed; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">
+            <div class="modal-content">
+
+                <div class="alert  fade in">
+                    <a href="#" class="close" data-dismiss="modal" aria-label="close" title="Cerrar">×</a>
+                    <div class="login-box-body">
+                        <div>
+                            <p class="login-box-msg">Ingrese su e-mail</p>
+                        </div>
+                        <div id="errorLabelLoginReset" class="alert alert-danger alert-dismissable" style="display: none">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <h4><i class="icon fa fa-ban"></i>Atención!</h4>
+
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <input type="email" id="mail" class="form-control" placeholder="e-mail" />
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-8">
+                            </div>
+                            <div class="col-xs-4">
+                                <input type="button" id="submitButtonLoginReset" title="Cambiar" onclick="resetPassword()" class="btn btn-success btn-block btn-flat" value="Cambiar" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- REQUIRED JS SCRIPTS -->
+    <script src="Resources/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="Resources/jQuery/jquery-ui-1.8.20.min.js" type="text/javascript"></script>
+    <script src="Resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="Resources/AdminLTE/js/app.min.js" type="text/javascript"></script>
+    <script src="Resources/bootstrap/bootstrap-dynamic-tabs.js" type="text/javascript"></script>
+    <script src="config.js" type="text/javascript"></script>
+    <script src="Scripts/default.js" type="text/javascript"></script>
+    <script src="Scripts/Site.js" type="text/javascript"></script>
+    <script src="Scripts/login.js" type="text/javascript"></script>
+    <script src="Scripts/MD5.js" type="text/javascript"></script>
+    <script src="Resources/Nprogress/nprogress.js" type="text/javascript"></script>
+
+
+</body>
+</html>
