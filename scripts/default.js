@@ -1,33 +1,6 @@
 (function ($, window, document) {
 
     $(function () {
-        $.ajax({
-            url: getwebservicesurl() + "Security.asmx/ValidateSessionId",
-            type: 'POST',
-            data: { sessionId: localStorage.getItem("session_id") },
-            dataType: 'json',
-            async: false,
-            crossdomain: true,
-            success: function (data) {
-                switch (data.InformationNumber) {
-
-                    case 0:
-                        
-                        break;
-                    case 1001:
-                        break;
-                    default:
-                        break;
-                }
-            },
-            error: function (result) {
-                var answer = JSON.stringify(result);
-                if (answer.indexOf("Maintenance") > 1)
-                    $(location).attr('href', getlocalurl() + 'Pages/Error/Maintenance.aspx');
-                else
-                    alert('ERROR ' + JSON.stringify(result));
-            }
-        });
 
         $.ajax({
             url: getwebservicesurl() + "Security.asmx/GetMenu",
@@ -202,8 +175,8 @@
                     var answer = JSON.stringify(result);
                     if (answer.indexOf("Maintenance") > 1)
                         $(location).attr('href', getlocalurl() + 'Pages/Error/Maintenance.aspx');
-                    else
-                        alert('ERROR ' + JSON.stringify(result));
+                    //else
+                        //alert('ERROR ' + JSON.stringify(result));
                 }
             });
         });
@@ -268,17 +241,6 @@ var username = localStorage.getItem("last_user_name");
 var sessionId = localStorage.getItem("session_id");
 var usr;
 
-var message = "Principal";
-
-
-var tabs = $('#tabs').bootstrapDynamicTabs().addTab({
-    title: message,
-    text: message,
-    //html: '<iframe src="http://flat-saffron.com.ar" width="100%" height="700px"></iframe>',
-    html: '<iframe src="Pages/Home/home.html" width="100%" height="700px"></iframe>',
-    icon: 'icon-home',
-    closable: false
-});
 
 
 
@@ -353,7 +315,7 @@ function loadIframe(url) {
 
     var $iframe = $('#' + 'mainIframe');
 
-    alert($iframe.selector.length)
+    //alert($iframe.selector.length)
 
     if ($iframe.selector.length) {
         $iframe.attr('src', url);// + '?' + getDateTime());

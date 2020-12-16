@@ -49,10 +49,10 @@ function beforeSend(result) {
    // alert("beforesend");
 }
 function error(result) {
-    alert("error");
+    //alert("error");
 }
 function complete(result) {
-    alert("complete");
+    //alert("complete");
 }
 function onAuthenticateSuccess(response) {
     $(".loading").hide();
